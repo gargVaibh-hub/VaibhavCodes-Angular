@@ -1,0 +1,6 @@
+<h2>Service included in Module</h2>
+Enter Number : <input type="text" #txtNumber />
+<button (click)="add(txtNumber.value)">Add Number</button><br />
+<ol>
+  <li *ngFor="let num of numList">{{ num }}</li>
+</ol>

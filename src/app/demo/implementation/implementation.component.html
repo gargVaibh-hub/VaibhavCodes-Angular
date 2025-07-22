@@ -1,0 +1,22 @@
+<div>
+    My Name is: {{"Mr. " + name}}
+    {{100 + 200}}<br>
+    {{"100" + "200"}}<br>
+    {{100-200}}
+</div>
+<div>
+    {{employee.name}}<br>
+    {{employee.age}}<br>
+    {{employee.role}}<br>
+    {{employee.tech}}<br>
+
+    <!-- How we can't access an object -->
+    {{employee}}<br>
+
+    <!-- For error handling, we use ternary operator -->
+    {{employee?.name}}<br>
+    {{employee?.age}}<br>
+
+    <!-- Showing No Data message -->
+    {{company?company.name: 'No data'}}<br>
+</div>

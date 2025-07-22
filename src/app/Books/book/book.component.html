@@ -1,0 +1,15 @@
+<h2>Available Books</h2>
+<table border="2">
+  <tr>
+    <td>Book ID</td>
+    <td>Book Name</td>
+    <td>Details</td>
+  </tr>
+  <tr *ngFor="let data of bookData">
+    <td>{{ data.id }}</td>
+    <td>{{ data.name }}</td>
+    <td>
+      <a [routerLink]="['/bookdetails', data.id]">Click Here</a>
+    </td>
+  </tr>
+</table>

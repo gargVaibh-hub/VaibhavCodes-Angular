@@ -1,183 +1,4 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -226,7 +47,6 @@
         </defs>
       </svg>
       <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -322,15 +142,312 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- <div>
+  <button class="button" (click)="openMenu()">Go to Experiments</button>
+</div> -->
 
+<h1>Parent Component</h1>
 
-<router-outlet />
+<!-- INPUT property implementation
+Enter Parent Name: <input type = "text" #parentComp (keyup)="0"/>
+
+Child component: Student ; Parent component: App
+<app-student [data]="parentComp.value"></app-student> -->
+
+<!-- OUTPUT property implementation -->
+Value of Child in Parent component : {{ output }}<br />
+<app-student (childEvent)="getData($event)"></app-student>
+<br /><br /><br />
+
+<!-- Here we are implementing NGIF directive -->
+<!-- <div *ngIf="true" style="color: brown; font-weight: bold;">NGIF Example</div>
+<input type="radio" name="example" checked (click)="change(true)">True
+<input type="radio" name="example" (click)="change(false)">False
+<div *ngIf="isValid">
+  Data True
+</div>
+<div *ngIf="!isValid">
+  Data False
+</div><br><br> -->
+
+<!-- Here we implement NGIF for gender choice -->
+<!-- <input type="radio" name="gender" checked (click)="changeGender('Male')">Male
+<input type="radio" name="gender" (click)="changeGender('Female')">Female
+<input type="radio" name="gender" (click)="changeGender('Other')">Others
+<div *ngIf="isMale == 'Male'">
+  Male Gender
+</div>
+<div *ngIf="isMale == 'Female'">
+  Female Gender
+</div>
+<div *ngIf="isMale == 'Other'">
+  Others
+</div><br><br> -->
+
+<!-- Here we see NGIF Then block -->
+<!-- <input type="radio" name="example" checked (click)="change(true)" />True
+<input type="radio" name="example" (click)="change(false)" />False
+<br />
+<div *ngIf="isValid; then thenblock; else elseblock"></div>
+<ng-template #thenblock> Data True </ng-template>
+<ng-template #elseblock> Data False </ng-template> <br /> -->
+
+<!-- Here in NGIF without * -->
+<!-- <ng-template [ngIf]="false" [ngIfThen]="thenBlock" [ngIfElse]="elseBlock"></ng-template>
+<ng-template #thenBlock>
+  ngIf then without using *
+</ng-template>
+<ng-template #elseBlock>
+  ngIf else without using *
+</ng-template><br><br> -->
+
+<!-- Examples of Pipes -->
+<!-- {{title | lowercase}}<br>
+{{title | uppercase}}<br>
+{{title | titlecase}}<br>
+{{title | slice:0:5}}<br>
+{{title | slice:5}}<br>
+{{title | slice:5:-1}}<br>
+{{title | json}}<br> -->
+
+<!-- Example of Async Pipe -->
+<!-- {{msg | async}} -->
+<!-- <div *ngIf="msg | async as messages; else loading">
+  {{ messages }}
+</div>
+<ng-template #loading> Loading... </ng-template><br /> -->
+
+<!-- *ngFor directive example -->
+<!-- <div *ngFor="let data of Employee">
+  ID: {{data.id}} || Name: {{data.name}}<br><br>
+</div> -->
+
+<!-- In a table format implementation of INDEX property NGFOR -->
+<!-- <table border="2">
+  <tr>
+    <th>Index</th>
+    <th>Employee ID</th>
+    <th>Name</th>
+  </tr>
+  <tr style="font-style: italic" *ngFor="let data of Employee; index as i">
+    <th>{{ i + 1 }}</th>
+    <th>{{ data.id }}</th>
+    <th>{{ data.name }}</th>
+  </tr>
+</table>
+<br /> -->
+
+<!-- Using EVEN and ODD property in NGFOR -->
+<!-- <div *ngFor="let data of Employee; even as isEven; odd as isOdd">
+  <div *ngIf="isEven" style="background-color: aqua">
+    || ID: {{ data.id }} || Name: {{ data.name }} ||<br />
+  </div>
+  <div *ngIf="isOdd" style="background-color: blueviolet">
+    || ID: {{ data.id }} || Name: {{ data.name }} ||<br />
+  </div>
+</div> -->
+
+<!-- Using FIRST and LAST property in NGFOR -->
+<!-- <div *ngFor="let data of Employee; first as isfirst; last as isLast">
+  <div *ngIf="isfirst" style="background-color: aqua">
+    || ID: {{ data.id }} || Name: {{ data.name }} ||<br />
+  </div>
+  <div *ngIf="!isfirst && !isLast">
+    || ID: {{ data.id }} || Name: {{ data.name }} ||<br />
+  </div>
+  <div *ngIf="isLast" style="background-color: blueviolet">
+    || ID: {{ data.id }} || Name: {{ data.name }} ||<br />
+  </div>
+</div> -->
+
+<!-- NGSWITCH example -->
+Enter your name : <input type="text" #userName (keyup)="(0)" />
+<!-- Here it is Property Binding with [] -->
+<div [ngSwitch]="userName.value">
+  <!-- <div *ngSwitchCase="'Rahul'">Hello Rahul</div>
+  <div *ngSwitchCase="'Vaibhav'">Hello Vaibhav</div>
+  <div *ngSwitchCase="'Shubham'">Hello Shubham</div>
+  <div *ngSwitchCase="'Vishal'">Hello Vishal</div>
+  <div *ngSwitchCase="'Vinod'">Hello Vinod</div>
+  <div *ngSwitchDefault>Hello Default</div> -->
+
+  <!-- ngTemplate conversion -->
+  <ng-template [ngSwitchCase]="'Rahul'">ngSwitch says, Hello Rahul</ng-template>
+  <ng-template [ngSwitchCase]="'Vaibhav'"
+    >ngSwitch says, Hello Vaibhav</ng-template
+  >
+  <ng-template [ngSwitchCase]="'Shubham'"
+    >ngSwitch says, Hello Shubham</ng-template
+  >
+  <ng-template [ngSwitchCase]="'Vishal'"
+    >ngSwitch says, Hello Vishal</ng-template
+  >
+  <ng-template [ngSwitchCase]="'Vinod'">ngSwitch says, Hello Vinod</ng-template>
+  <ng-template [ngSwitchDefault]>Hello Default</ng-template><br />
+</div>
+<br />
+
+<!-- Another case for Interpolation Binding {{}} for value expressions + NGFOR -->
+<!-- ngSwitch can also be used alongwith ngFor in above div, is allowed! -->
+<!-- <div *ngFor="let data of ids">
+  <div ngSwitch="{{ data % 2 }}">
+    <div *ngSwitchCase="'0'" style="background-color: yellow">
+      ID value: {{ data }} - Even Number
+    </div>
+    <div *ngSwitchCase="'1'" style="background-color: pink">
+      ID value: {{ data }} - Odd Number
+    </div>
+  </div>
+</div> -->
+
+<!-- Use of ngClass in code -->
+<!-- Using two classes simultaneously with ngClass -->
+<!-- <div *ngFor="let data of Employee" [ngClass]="'one two'">
+  ID: {{ data.id }} || Name: {{ data.name }}<br />
+</div> -->
+
+<!-- ngClass Can also be coded as [] -->
+<!-- <div *ngFor="let data of Employee" [ngClass]="['one', 'two']">
+  ID: {{ data.id }} || Name: {{ data.name }}<br />
+</div> -->
+
+<!-- ngClass Can also be coded as {} -->
+<!-- <div *ngFor="let data of Employee" [ngClass]="{ one: true, two: false }">
+  ID: {{ data.id }} || Name: {{ data.name }}<br />
+</div> -->
+
+<!-- ngClass for condition based value -->
+<!-- <div
+  *ngFor="let data of Employee; index as i"
+  [ngClass]="{ one: i % 2 == 0, two: i % 2 == 1 }"
+>
+  ID: {{ data.id }} || Name: {{ data.name }}<br />
+</div> -->
+
+<!-- Property vsAttribute Binding -->
+<!-- In console type "txtId.value" to see Property Value and type "txtId.getAttribute('value')" to see Attribute Value -->
+<!-- <input type="text" value="Vaibhav" id="txtId" /> -->
+
+<!-- Event Binding Examples -->
+<!-- <button (click)="onClick()">Click Me</button> -->
+<!-- Canonical form -->
+<!-- <button on-click="onClick()">Click Me Canonical</button> -->
+
+<!-- ngModule 2 way binding -->
+<!-- Enter name : <input type="text" [(ngModel)]="nameBinding" /><br />
+Your name : <b>{{ nameBinding }}</b> -->
+
+<!-- Custom Pipe Example -->
+<!-- <div>{{ name | welcome }}</div> -->
+<!-- <div>{{ customString | limitword }}</div>
+<div>{{ customString | limitword : 20 }}</div>
+<div>{{ customString | limitword : 25 : "****" }}</div> -->
+
+<!-- Service Example -->
+<!-- <app-example1></app-example1>
+<br /> -->
+
+<!-- Routing examples -->
+<!-- Component will be loaded where router-outlet is defined. -->
+<div>
+  <!-- <a routerLink="/login" routerLinkActive="active">Login</a> |
+  <a routerLink="/home">Home</a> | <a routerLink="/aboutus">About Us</a> |
+  <a routerLink="/contactus">Contact Us</a> | <a routerLink="/books">Book</a> |
+  <a routerLink="/chatbot">AI Chatbot</a> |
+  <a routerLink="/student" routerLinkActive="active">Student</a> |
+  <a [routerLink]="[{ outlets: { auxiliaryRouter: ['aboutusnew'] } }]"
+  >About Us New</a
+  >
+  <br /> -->
+  <!-- About us New is the page to implement Auxiliary Routing -->
+
+  <!-- When we place href instead of routerLink, it refreshes the whole page {a Demerit} -->
+  <!-- <a href="/home">Home</a> | <a href="/aboutus">About Us</a> |
+  <a href="/contactus">Contact Us</a> |
+  <a href="/chatbot">AI Chatbot</a> -->
+
+  <!-- <button (click)="navigateToHome()">Go to Home</button> -->
+</div>
+<!-- <router-outlet></router-outlet> -->
+<!-- <router-outlet name="auxiliaryRouter"></router-outlet> -->
+
+<!-- Implementation of LocalStorage and SessionStorage -->
+<!-- <button (click)="setLocalStorageData()">Set Local Storage</button><br />
+<button (click)="getLocalStorageData()">Get Local Storage</button>
+<br />
+local storage data is: {{ localName }}<br />
+<button (click)="removeLocalStorageData()">Remove Local Storage</button><br />
+<button (click)="getLocalStorageLength()">Get Storage Length</button><br />
+<button (click)="displayLocalStorageData()">Display Local Storage</button><br /> -->
+
+<!-- Implementation of Cookies -->
+<!-- <button (click)="setCookieData()">Set Cookie</button><br /> -->
+
+<!-- InMemoryWebApi Example -->
+<!-- <br />
+<h3>Book Details from InMemoryWebApi with Suscribe Method</h3>
+<ul>
+  <li *ngFor="let data of myBooks">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul> -->
+
+<!-- <br />
+<h3>Book Details from InMemoryWebApi with Async Pipe</h3>
+<ul>
+  <li *ngFor="let data of myBooks$ | async">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul> -->
+
+<!-- <br />
+<h3>Book Details (getById) from InMemoryWebApi with Suscribe Method</h3>
+<ul>
+  <li *ngFor="let data of myBookId">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul> -->
+
+<!-- <br />
+<h3>Book Details (getById) from InMemoryWebApi with Async Pipe</h3>
+<ul>
+  <li *ngFor="let data of myBookId$ | async">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul> -->
+
+<!-- <br />
+<h3>Show Book Name :</h3>
+{{ bookName }}
+
+<br />
+<h3>Show Book Name using Async Pipe:</h3>
+<b *ngIf="bookName2$ | async as bookNameAsync"> {{ bookNameAsync }} </b> -->
+
+<!-- implementing filter() and map() simultaneously -->
+<!-- <br />
+<h2>Related Books</h2>
+<br />
+<ul>
+  <li *ngFor="let data of relatedBooks">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul>
+
+<br />
+<h2>Related Books using MergeMap</h2>
+<br />
+<ul>
+  <li *ngFor="let data of relatedBooks2">
+    ID: {{ data.id }} || Name: {{ data.name }} || Category: {{ data.category }}
+  </li>
+</ul> -->
+
+<div>
+  <a routerLink="home2" routerLinkActive="active">Home</a> |
+  <a routerLink="company" routerLinkActive="active">Company</a> |
+  <a routerLink="person" routerLinkActive="active">Persons</a> |
+</div>
+<router-outlet></router-outlet>

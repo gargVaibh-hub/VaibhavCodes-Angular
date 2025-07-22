@@ -1,0 +1,10 @@
+<table border="1">
+  <tr>
+    <td>Company Name</td>
+    <td>Location</td>
+  </tr>
+  <tr *ngFor="let data of compList">
+    <td>{{ data.name }}</td>
+    <td>{{ data.country }}</td>
+  </tr>
+</table>
