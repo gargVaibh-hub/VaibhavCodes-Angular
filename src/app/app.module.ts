@@ -28,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CompanyModule } from './company/company.module';
 import { PersonModule } from './person/person.module';
-import { TemplateformComponent } from './Forms/templateform/templateform.component';
+import { TemplateformComponent } from './Forms/templateform/Templateform/templateform.component';
+import { ReactiveformComponent } from './Forms/templateform/reactiveform/reactiveform.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TemplateformComponent } from './Forms/templateform/templateform.compone
     AboutusnewComponent,
     HomeComponent,
     TemplateformComponent,
+    ReactiveformComponent,
   ],
   imports: [
     BrowserModule,

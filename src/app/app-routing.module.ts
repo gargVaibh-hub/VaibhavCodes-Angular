@@ -111,12 +111,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  // imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   // Preloading Example, can be implemented only when module is in Lazy Loading
   // imports: [RouterModule.forRoot(routes, { preloadingStrategy: NoPreloading })], // Loaded on click
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }), // Loaded before click
-  ],
+  // imports: [
+  //   RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }), // Loaded before click
+  // ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
