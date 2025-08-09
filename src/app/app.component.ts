@@ -7,6 +7,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { BookService } from './book.service';
 import { BookInMemory } from './book';
 import { Observable, filter, from, map, mergeMap } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +44,9 @@ export class AppComponent {
     this.getBookByIdApi();
     this.getRelatedBooks();
     this.mapAndFilterExam();
+    this.filterAllBooks('html');
+    this.validteApiCall();
+    this.jqueryExam();
   }
 
   openMenu() {
@@ -133,6 +138,7 @@ export class AppComponent {
       this.myBooks = res;
     });
 
+    // No need to subscribe in Async Pipe method
     this.myBooks$ = this._bookService.getBooksFromApi(); // using async pipe
   }
 
@@ -206,6 +212,97 @@ export class AppComponent {
         .subscribe((data) => {
           console.log('Mapped and Filtered Data:', data);
         });
+    });
+  }
+
+  searchBook: BookInMemory[] = [];
+  paramRes: BookInMemory[] = [];
+  // HttpClient Request Example with Headers
+  filterAllBooks(categ) {
+    this._bookService.filterBooks(categ).subscribe((res) => {
+      this.searchBook = res;
+      // console.log(res, 'HttpHeader Res');
+    });
+
+    this._bookService.filterBookParam(categ).subscribe((res) => {
+      this.paramRes = res;
+      console.log(res, 'httpparam response');
+    });
+  }
+
+  // Error handling example
+  validteApiCall() {
+    this._bookService.handleApiError().subscribe(
+      (res) => {
+        console.log(res, 'Api Response');
+      },
+      // (err) => {
+      //   alert('404 API Not Found');
+      // }
+      (err: HttpErrorResponse) => {
+        if (err.error instanceof Error) {
+          // Client side or network related issue
+          console.log('error is: ' + err.error.message);
+        } else {
+          // Backend related issue
+          console.log('Status code: ' + err.status);
+          console.log('Status text: ' + err.statusText);
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  // Http Post request example
+  savedata() {
+    let newBooks = { id: 10, name: 'Node JS', category: 'Development' };
+    this.addBookPost(newBooks);
+  }
+
+  addBookPost(book: BookInMemory) {
+    this._bookService.postBook(book).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  // Http Put request example
+  updatedata() {
+    let changeBooks = { id: 6, name: 'Angular JS', category: 'FrontEnd' };
+    this.updBookPut(changeBooks);
+  }
+
+  updatedRes: BookInMemory[] = [];
+  updBookPut(upbook: BookInMemory) {
+    this._bookService.updateBook(upbook).subscribe((res) => {
+      console.log(res);
+      this._bookService.getBooksFromApi().subscribe((res) => {
+        this.updatedRes = res;
+      });
+    });
+  }
+
+  // Http Delete request example
+  deletedata() {
+    this.delBook(1);
+  }
+
+  deletedRes: BookInMemory[] = [];
+  delBook(delbookId: number) {
+    this._bookService.deleteBook(delbookId).subscribe((res) => {
+      console.log(res);
+      this._bookService.getBooksFromApi().subscribe((res) => {
+        this.deletedRes = res;
+      });
+    });
+  }
+
+  jqueryExam() {
+    $(document).ready(function () {
+      $('button').click(function () {
+        $('#div1').fadeIn();
+        $('#div2').fadeIn('slow');
+        $('#div3').fadeIn(3000);
+      });
     });
   }
 }

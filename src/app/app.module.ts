@@ -8,7 +8,7 @@ import { StudentComponent } from './Student/student/student.component';
 import { ChildofStudentComponent } from './ChildOfStudent/childof-student/childof-student.component';
 import { EmployeeComponent } from './Employee/employee/employee.component';
 import { Emp } from './emp';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WelcomePipe } from './welcome.pipe';
 import { LimitwordPipe } from './limitword.pipe';
 import { Example1Component } from './Service Example/example1/example1.component';
@@ -30,6 +30,9 @@ import { CompanyModule } from './company/company.module';
 import { PersonModule } from './person/person.module';
 import { TemplateformComponent } from './Forms/templateform/Templateform/templateform.component';
 import { ReactiveformComponent } from './Forms/templateform/reactiveform/reactiveform.component';
+import { RegistrationformComponent } from './Forms/templateform/registrationform/registrationform.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -53,13 +56,17 @@ import { ReactiveformComponent } from './Forms/templateform/reactiveform/reactiv
     HomeComponent,
     TemplateformComponent,
     ReactiveformComponent,
+    RegistrationformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    InMemoryWebApiModule.forRoot(TestData),
+    InMemoryWebApiModule.forRoot(TestData), //Real API & InMemory can't be used simultaneously in a project
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule, // Contains separat material modules imports and exports to make app light
     // For Eager Loading
     // PersonModule,
     // CompanyModule,
