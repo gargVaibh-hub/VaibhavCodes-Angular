@@ -1,0 +1,122 @@
+<h1>Reactive Form</h1>
+<div>
+  <form [formGroup]="sampleForm" (ngSubmit)="submitData()">
+    <div>
+      First Name:
+      <input
+        type="text"
+        placeholder="Enter first name"
+        formControlName="fname"
+      />
+      <div
+        class="error"
+        *ngIf="
+          sampleForm.controls['fname'].touched &&
+          !sampleForm.controls['fname'].valid
+        "
+      >
+        <span *ngIf="sampleForm.controls['fname'].hasError('required')">
+          First Name is required
+        </span>
+        <span *ngIf="sampleForm.controls['fname'].hasError('minlength')">
+          First Name should be at least 5 characters
+        </span>
+        <span *ngIf="sampleForm.controls['fname'].hasError('maxlength')">
+          First Name should not be more than 15 characters
+        </span>
+      </div>
+    </div>
+    <div>
+      Last Name:
+      <input
+        type="text"
+        placeholder="Enter last name"
+        formControlName="lname"
+      />
+      <div
+        class="error"
+        *ngIf="
+          sampleForm.controls['lname'].touched &&
+          !sampleForm.controls['lname'].valid
+        "
+      >
+        <span *ngIf="sampleForm.controls['lname'].hasError('required')">
+          Last Name is required
+        </span>
+        <span *ngIf="sampleForm.controls['lname'].hasError('minlength')">
+          Last Name should be at least 5 characters
+        </span>
+        <span *ngIf="sampleForm.controls['lname'].hasError('maxlength')">
+          Last Name should not be more than 15 characters
+        </span>
+      </div>
+    </div>
+    <div>
+      Email:
+      <input type="text" placeholder="Enter email" formControlName="email" />
+      <div
+        class="error"
+        *ngIf="
+          sampleForm.controls['email'].touched &&
+          !sampleForm.controls['email'].valid
+        "
+      >
+        <span *ngIf="sampleForm.controls['email'].hasError('required')">
+          Email is required
+        </span>
+        <span *ngIf="sampleForm.controls['email'].hasError('email')">
+          Email should be correct
+        </span>
+      </div>
+    </div>
+    <div>
+      Mobile No:
+      <input type="text" placeholder="Enter mobile" formControlName="mobile" />
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button (click)="resetForm()">Reset 2</button>
+      <button (click)="fillData()">Fill Data</button>
+    </div>
+  </form>
+  <br /><br />
+
+  <div style="font-size: 20px; font-weight: bold; color: brown">
+    FormArray Example
+  </div>
+  <form [formGroup]="arrayForm" (ngSubmit)="submitData()">
+    <div>
+      Email:
+      <input type="text" placeholder="Enter email" formControlName="email" />
+      <div
+        class="error"
+        *ngIf="
+          sampleForm.controls['email'].touched &&
+          !sampleForm.controls['email'].valid
+        "
+      >
+        <span *ngIf="sampleForm.controls['email'].hasError('required')">
+          Email is required
+        </span>
+        <span *ngIf="sampleForm.controls['email'].hasError('email')">
+          Email should be correct
+        </span>
+      </div>
+    </div>
+    <div formArrayName="mobilenos">
+      <div
+        *ngFor="let mobile of arrayForm.get('mobilenos').controls; index as id"
+      >
+        Mobile No:
+        <input type="text" placeholder="Enter mobile" [formControlName]="id" />
+        <button (click)="deleteNumber(id)">Delete</button>
+      </div>
+      <button (click)="addNumber()">Add More</button>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book, BookInMemory } from './book';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -43,6 +43,7 @@ export class BookService {
     return of(foundBook ? [foundBook] : []);
   }
 
+  // HttpClient Example also
   private apiUrl = '/api/books'; // Example of API URL for InMemoryWebAPI
   getBooksFromApi(): Observable<BookInMemory[]> {
     return this.httpClient.get<BookInMemory[]>(this.apiUrl);
@@ -60,5 +61,63 @@ export class BookService {
 
   getNumbers(): Observable<number[]> {
     return of([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  }
+
+  // Passing HttpHeader in HttpClient Request
+  filterBooks(categ: string): Observable<BookInMemory[]> {
+    let httpHeader = new HttpHeaders().set('Accept', 'application/json'); // Send the res in JSON format
+
+    return this.httpClient.get<BookInMemory[]>(
+      this.apiUrl + '?category=' + categ,
+      {
+        headers: httpHeader,
+      }
+    );
+  }
+
+  // Passing HttpParams in HttpClient Request
+  filterBookParam(categ: string): Observable<BookInMemory[]> {
+    let httpHeader = new HttpHeaders().set('Accept', 'application/json'); // Send the res in JSON format
+
+    let httpParam = new HttpParams().set('category', categ);
+
+    return this.httpClient.get<BookInMemory[]>(this.apiUrl, {
+      headers: httpHeader,
+      params: httpParam,
+    });
+  }
+
+  // Error handling example
+  private myUrl = '/api/invalid';
+  handleApiError() {
+    return this.httpClient.get(this.myUrl);
+  }
+
+  // Http Post Example
+  postBook(book: BookInMemory): Observable<BookInMemory> {
+    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpClient.post<BookInMemory>(this.apiUrl, book, {
+      headers: httpHeaders,
+    });
+  }
+
+  // Http Put Example
+  updateBook(book: BookInMemory): Observable<BookInMemory> {
+    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpClient.put<BookInMemory>(
+      this.apiUrl + '/' + book.id,
+      book,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
+
+  // Http Delete Example
+  deleteBook(bookId: number): Observable<BookInMemory> {
+    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpClient.delete<BookInMemory>(this.apiUrl + '/' + bookId, {
+      headers: httpHeaders,
+    });
   }
 }

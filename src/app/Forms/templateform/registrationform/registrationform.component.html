@@ -1,0 +1,40 @@
+<h2>Registration Form - Nested FormGroup Example</h2>
+<div>
+  <form [formGroup]="userForm" (ngSubmit)="submitData()">
+    <div>
+      First Name: <input type="text" formControlName="fname" /><br />
+      <label class="error" *ngIf="fnameForm.invalid"
+        >First Name is Required!</label
+      >
+    </div>
+    <div>
+      Last Name: <input type="text" formControlName="lname" /><br />
+      <label class="error" *ngIf="lnameForm.invalid"
+        >Last Name is Required!</label
+      >
+    </div>
+    <div formGroupName="address">
+      <div>
+        House No: <input type="text" formControlName="houseno" /><br />
+        <label class="error" *ngIf="addressForm.get('houseno').invalid"
+          >House No is Required!</label
+        >
+      </div>
+      <div>
+        City: <input type="text" formControlName="city" /><br />
+        <label class="error" *ngIf="addressForm.get('city').invalid"
+          >City is Required!</label
+        >
+      </div>
+      <div>
+        Pincode: <input type="text" formControlName="pincode" /><br />
+        <label class="error" *ngIf="addressForm.get('pincode').invalid"
+          >Pincode is Required!</label
+        >
+      </div>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
