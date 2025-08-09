@@ -10,3 +10,11 @@ export class BookInMemory {
   name?: string;
   category?: string;
 }
+
+// For HttpClient Example
+export interface Books {
+  id?: number;
+  name?: string;
+  category?: string;
+  year?: string;
+}
