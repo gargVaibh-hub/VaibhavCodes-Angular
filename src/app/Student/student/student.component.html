@@ -2,8 +2,8 @@
   <h1>Mr. {{ name }} is a student of Angular!</h1>
 </div> -->
 
-<!-- INPUT property data binding
-Value of Parent component using INPUT is :- {{data}} <br><br> -->
+<!-- INPUT property data binding Value of Parent component using INPUT is :-
+{{ data }} <br /><br /> -->
 
 <!-- Experiment of Encapsulation of child of child component -->
 <!-- <app-childof-student></app-childof-student> -->
@@ -16,4 +16,20 @@ Value of Parent component using INPUT is :- {{data}} <br><br> -->
   (keyup)="sendData(childComp.value)"
 /> -->
 
-<a routerLink="studentDetail">Student Detail</a>
+<!-- <a routerLink="studentDetail">Student Detail</a> -->
+
+<!-- Content projection using <ng-content>, it displays HTMl content of defined Child Comp in Parent tag -->
+<!-- <ng-content></ng-content><br /> -->
+
+<!-- Different ways of Content Projection -->
+<!-- Using TAG -->
+<!-- <ng-content select="h1"></ng-content> -->
+
+<!-- Using ID -->
+<!-- <ng-content select="#pId"></ng-content> -->
+
+<!-- Using CLASS -->
+<!-- <ng-content select=".one"></ng-content> -->
+
+<!-- Using ATTRIBUTE -->
+<!-- <ng-content select="[header]"></ng-content> -->
