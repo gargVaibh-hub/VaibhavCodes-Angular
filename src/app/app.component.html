@@ -149,17 +149,18 @@
 </div> -->
 
 <h1>Parent Component</h1>
+<br />
 
-<!-- INPUT property implementation
-Enter Parent Name: <input type = "text" #parentComp (keyup)="0"/>
+<!-- INPUT property implementation -->
+<!-- Enter Parent Name: <input type="text" #parentComp (keyup)="(0)" /><br /> -->
 
-Child component: Student ; Parent component: App
-<app-student [data]="parentComp.value"></app-student> -->
+<!-- Child component: Student ; Parent component: App -->
+<!-- <app-student [data]="parentComp.value"></app-student> -->
 
 <!-- OUTPUT property implementation -->
-Value of Child in Parent component : {{ output }}<br />
+<!-- Value of Child in Parent component : {{ output }}<br />
 <app-student (childEvent)="getData($event)"></app-student>
-<br /><br /><br />
+<br /><br /><br /> -->
 
 <!-- Here we are implementing NGIF directive -->
 <!-- <div *ngIf="true" style="color: brown; font-weight: bold;">NGIF Example</div>
@@ -518,7 +519,7 @@ local storage data is: {{ localName }}<br />
 <!-- <h4 class="bg-light">This is Bootstrap Example!</h4> -->
 
 <!-- Jquery Example -->
-<button>Click to fade in boxes</button><br /><br />
+<!-- <button>Click to fade in boxes</button><br /><br />
 
 <div
   id="div1"
@@ -533,4 +534,25 @@ local storage data is: {{ localName }}<br />
 <div
   id="div3"
   style="width: 80px; height: 80px; display: none; background-color: blue"
-></div>
+></div> -->
+
+<!-- Custom Directive Application -->
+<!-- <p appTheme>Custom Directive Example!</p> -->
+
+<!-- Content Projection using <ng-content> in component
+Displayed where ng-content is defined -->
+<!-- <app-student>
+  <app-childof-student></app-childof-student>
+</app-student> -->
+
+<!-- Different ways of Content Projection -->
+<!-- <app-student>
+  <button>Save</button>
+  <h1>Hello Vaibhav.</h1>
+  <p id="pId">This code is written by me.</p>
+  <div class="one">This is a DIV tag.</div>
+  <div header>This is second DIV tag.</div>
+</app-student> -->
+
+<!-- Depicting ViewChild example thorugh Counter and ShowCounter -->
+<app-counter></app-counter>
