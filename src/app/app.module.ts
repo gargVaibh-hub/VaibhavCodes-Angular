@@ -33,6 +33,9 @@ import { ReactiveformComponent } from './Forms/templateform/reactiveform/reactiv
 import { RegistrationformComponent } from './Forms/templateform/registrationform/registrationform.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { ThemeDirective } from './theme.directive';
+import { CounterComponent } from './counter/counter.component';
+import { ShowCounterComponent } from './show-counter/show-counter.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { MaterialModule } from './material/material.module';
     TemplateformComponent,
     ReactiveformComponent,
     RegistrationformComponent,
+    ThemeDirective,
+    CounterComponent,
+    ShowCounterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Emp } from './emp';
 import { Color } from './color';
@@ -6,7 +12,16 @@ import { MessageService } from './message.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BookService } from './book.service';
 import { BookInMemory } from './book';
-import { Observable, filter, from, map, mergeMap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  ReplaySubject,
+  Subject,
+  filter,
+  from,
+  map,
+  mergeMap,
+} from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import $ from 'jquery';
 
@@ -29,8 +44,15 @@ export class AppComponent {
     private _emp: Emp,
     private _message: MessageService,
     private _cookie: CookieService,
-    private _bookService: BookService
+    private _bookService: BookService,
+    private elref: ElementRef
   ) {
+    // Concatenation of STRING and OBJECT is not possible, example
+    console.log('String' + { id: 1, name: Object });
+
+    // Advance Observables - Subject and BehaviorSubject
+    this.advaceObservables();
+
     this.dataTypes();
 
     // Example of ENUM class Color
@@ -47,6 +69,7 @@ export class AppComponent {
     this.filterAllBooks('html');
     this.validteApiCall();
     this.jqueryExam();
+    // elref.nativeElement.style.color = 'green';
   }
 
   openMenu() {
@@ -304,5 +327,48 @@ export class AppComponent {
         $('#div3').fadeIn(3000);
       });
     });
+  }
+
+  // HostBinding sets the properties on the element
+  // @HostBinding('style.color') myColor = 'red';
+  // @HostBinding('style.background-color') mybgColor = 'blue';
+
+  // HostListener event example combined with HostBinding
+  // @HostListener('click') myClick() {
+  //   // alert('Not allowed!');
+  //   this.myColor = 'yellow';
+  // }
+
+  // @HostBinding('style.font-size') mySize = '12px';
+  // @HostListener('mouseover') onMouseOver() {
+  //   this.mySize = '40px';
+  // }
+
+  // @HostListener('mouseleave') onMouseLeave() {
+  //   this.mySize = '15px';
+  // }
+
+  advaceObservables() {
+    // Subject
+    const subj = new Subject();
+    subj.subscribe((res) => console.log('Subscription 1: ' + res));
+    subj.next(100);
+    subj.next('Vaibhav');
+
+    // Behavior Subject
+    const behSubj = new BehaviorSubject(1000); // Needs initial value of any data-type
+    behSubj.subscribe((val) => console.log('Behavior subscription: ' + val)); // Without NEXT getting default value
+    behSubj.next(2000);
+    // behSubj.next('Vaibhav');  // STRING not accepted since default value is numeric
+
+    // Replay Subject
+    // const repSub1 = new ReplaySubject(); // Returns all values
+    const repSub1 = new ReplaySubject(2); // this value is limit of replay from last
+
+    repSub1.next(122);
+    repSub1.next(133);
+    repSub1.next(144);
+    repSub1.next(155);
+    repSub1.subscribe((value) => console.log('Replay subscription: ' + value)); // Returns all assigned values
   }
 }
